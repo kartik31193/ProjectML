@@ -1,12 +1,32 @@
-# Build and deploy your first machine learning web app
-#### A beginner’s guide to train and deploy machine learning pipelines in Python using PyCaret
+# Heart Disease Prediction WebApp with Flask API
 
-Read the complete post: https://medium.com/@moez_62905/build-and-deploy-your-first-machine-learning-web-app-280c53d3800a
+A tool created to aid Heart Disease Diagnosis
 
-- Official Website : https://www.pycaret.org
+**Status**: This project is in development phase.
 
-- Follow us on LinkedIn : https://www.linkedin.com/company/pycaret/
 
-- Subscribe to our YouTube : https://www.youtube.com/channel/UCxA1YTYJ9BEeo50lxyI_B3g 
+## Requirements:
+- Flask 
+- Python
 
-- PyCaret repository : https://www.github.com/pycaret/pycaret
+## Overview:
+
+- Frontend of WebApp
+   - ```HTML ```
+   - ```CSS ```
+
+- Backend Of WebApp
+   - ```Flask ```
+   
+- Deployment of WebApp
+   - ```Heroku ```
+   
+*This web application is currently hosted on Heroku platform and you can access the app through the link below.
+
+
+##  Preview Images:
+
+<p float="left">
+  <img src=>
+
+ </p>
