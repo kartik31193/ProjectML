@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {background-color: powderblue; color: red}
+h1   {color: red;}
+h2   {color: blue;}
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid green;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  color: green;
+}
+
+button[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+}
+
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, button[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+
+
+<body>
+	<h1>Predict Heart Disease</h1>
+    <div class="container">
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+        <h2>Age:</h2><br>
+        <input type="text" name="age" placeholder="Age" required="required" /><br>
+        <br>
+        <h2>Sex:</h2><br>
+        <input type="checkbox" id="v1" name="sex_1" value=1>
+        <label for="v1"> male</label><br>
+        <input type="checkbox" id="v2" name="sex_2" value=1>
+        <label for="v2"> female</label><br>
+        <br>
+        <h2>chest pain type: </h2><br>
+        <input type="checkbox" id="v3" name="chest_pain_type_1" value=1>
+        <label for="v3"> typical angina</label><br>
+        <input type="checkbox" id="v4" name="chest_pain_type_2" value=1>
+        <label for="v4"> atypical angina</label><br>
+        <input type="checkbox" id="v5" name="chest_pain_type_3" value=1>
+        <label for="v5"> non-anginal pain</label><br>
+        <input type="checkbox" id="v6" name="chest_pain_type_4" value=1>
+        <label for="v6"> asymptomatic</label><br>
+        <br>
+        <h2> resting blood pressure (in mm Hg): </h2><br>
+        <input type="text" name="resting_blood_pressure" placeholder="resting blood pressure (in mm Hg )" required="required" /><br>
+        <br>
+        <h2>serum cholestoral in mg/dl: </h2><br>
+        <input type="text" name="cholesterol" placeholder="serum cholestoral in mg/dl" required="required" /><br>
+        <br>
+        <h2> fasting blood sugar: </h2><br>
+        <input type="checkbox" id="x1" name="fasting_blood_sugar_1" value=1>
+        <label for="x1"> fasting blood sugar > 120 mg/dl</label><br>
+        <input type="checkbox" id="x2" name="fasting_blood_sugar_2" value=1>
+        <label for="x2"> fasting blood sugar < 120 mg/dl</label><br>
+        <br>
+        <h2>resting electrocardiographic results: </h2><br>
+        <input type="checkbox" id="v7" name="rest_ecg_1" value=1>
+        <label for="v7">  normal</label><br>
+        <input type="checkbox" id="v8" name="rest_ecg_2" value=1>
+        <label for="v8"> having ST-T</label><br>
+        <input type="checkbox" id="v9" name="rest_ecg_3" value=1>
+        <label for="v9"> hypertrophy</label><br>
+        <br>
+        <h2>maximum heart rate achieved: </h2><br>
+        <input type="text" name="max_heart_rate_achieved" placeholder="maximum heart rate achieved" required="required" /><br>
+        <br>
+        <h2>exercise induced angina: </h2><br>
+        <input type="checkbox" id="z1" name="exercise_induced_angina_1" value=1>
+        <label for="z1"> yes</label><br>
+        <input type="checkbox" id="z2" name="exercise_induced_angina_2" value=1>
+        <label for="z2"> no</label><br>
+        <br>
+        <h2>ST depression induced by exercise relative to rest: </h2><br>
+        <input type="text" name="st_depression" placeholder="st_depression" required="required" /><br>
+        <br>
+        <h2>the slope of the peak exercise ST segment: </h2><br>
+        <input type="checkbox" id="y1" name="st_slope_1" value=1>
+        <label for="y1"> upsloping</label><br>
+        <input type="checkbox" id="y2" name="st_slope_2" value=1>
+        <label for="y2">  flat</label><br>
+        <input type="checkbox" id="y3" name="st_slope_3" value=1>
+        <label for="y3"> downsloping</label><br>
+        <br>
+        <h2>number of major vessels (0-3) colored by flourosopy: </h2><br>
+        <input type="checkbox" id="e1" name="num_major_vessels_1" value=1>
+        <label for="e1"> 0</label><br>
+        <input type="checkbox" id="e2" name="num_major_vessels_2" value=1>
+        <label for="e2"> 1</label><br>
+        <input type="checkbox" id="e3" name="num_major_vessels_3" value=1>
+        <label for="e3"> 2</label><br>
+        <input type="checkbox" id="e4" name="num_major_vessels_4" value=1>
+        <label for="e4"> 3</label><br>
+        <br>
+
+        <h2>thalassemia: </h2><br>
+        <input type="checkbox" id="r1" name="thalassemia_1" value=1>
+        <label for="r1"> normal</label><br>
+        <input type="checkbox" id="r2" name="thalassemia_2" value=1>
+        <label for="r2"> fixed defect</label><br>
+        <input type="checkbox" id="r3" name="thalassemia_3" value=1>
+        <label for="r3"> reversable defect</label><br>
+        <br>
+        <br>
+
+
+
+        <button type="submit" >Predict</button>
+    </form>
+</div>
+   <br><br>
+<h1>{{pred}}</h1>
+ <br><br>
+</body>
+</html>
