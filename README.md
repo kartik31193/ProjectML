@@ -1,13 +1,20 @@
 # Heart Disease Prediction WebApp with Flask API
 
-A tool created to aid Heart Disease Diagnosis
+This tool is created to enhance the process of Heart Disease Diagnosis.
+
+[Check out the WebApp](https://heartdisease-predict.herokuapp.com/)
+
 
 **Status**: This project is in development phase.
 
 
 ## Requirements:
-- Flask 
 - Python
+- Flask 
+- gunicorn
+- pandas
+- xgboost
+- sklearn
 
 ## Overview:
 
@@ -16,12 +23,13 @@ A tool created to aid Heart Disease Diagnosis
    - ```CSS ```
 
 - Backend Of WebApp
-   - ```Flask ```
+   - ```Flask Api```
    
 - Deployment of WebApp
    - ```Heroku ```
    
-*This web application is currently hosted on Heroku platform and you can access the app through the link below.
+This web application is currently hosted on [Heroku platform](http://heroku.com/) and you can access the app through this [link](https://heartdisease-predict.herokuapp.com/)
+.
 
 
 ##  Preview Images:
@@ -30,3 +38,11 @@ A tool created to aid Heart Disease Diagnosis
   <img src=>
 
  </p>
+ 
+## Contribution
+
+ This is an open source project. Any contributions and suggestions are always welcome. 
+ 
+## License
+
+This WebApp and API is released under MIT LICENSE(see [LICENSE](LICENSE)).
