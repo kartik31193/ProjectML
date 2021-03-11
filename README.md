@@ -34,10 +34,7 @@ This web application is currently hosted on [Heroku platform](http://heroku.com/
 
 ##  Preview Images:
 
-<p float="left">
-  <img src=>
-
- </p>
+![Screenshot_20210311-205904_Chrome](https://user-images.githubusercontent.com/20455250/110819813-8ad6f700-82b4-11eb-80af-b102bbc01f28.jpg)
  
 ## Contribution
 
